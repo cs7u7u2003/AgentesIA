@@ -1,17 +1,34 @@
 # ContentAgentApp
 
-Base inicial del proyecto dentro del repositorio contenedor **AgentesIA**.
+Aplicación local mínima para planificar contenido, generar ideas y organizar una semana de publicaciones.
 
-## Estado
+## Qué incluye
 
-Scaffold inicial creado para separar este proyecto del workspace interno del agente.
+- formulario de brief de contenido
+- generación automática de posicionamiento
+- 5 ideas iniciales de contenido
+- calendario semanal sugerido
+- CTA recomendado
+- persistencia local en el navegador con `localStorage`
+- servidor Node sin dependencias externas
+
+## Ejecutar
+
+```bash
+npm start
+```
+
+Luego abre:
+
+- `http://localhost:3000`
 
 ## Estructura
 
-- `README.md`: descripción inicial del proyecto
-- `.gitignore`: exclusiones básicas
-- `src/`: código fuente del proyecto
+- `server.js`: servidor estático mínimo
+- `src/index.html`: interfaz principal
+- `src/styles.css`: estilos de la app
+- `src/app.js`: lógica de generación y persistencia
 
-## Próximo paso
+## Estado v3
 
-Definir stack y comenzar la v3 sobre esta base limpia.
+Esta versión deja una base funcional para seguir iterando con autenticación, backend real, exportación o IA conectada.
