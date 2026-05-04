@@ -1,0 +1,10 @@
+{
+  "name": "content-agent-app",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Aplicación local para planificar, generar y organizar contenido.",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  }
+}

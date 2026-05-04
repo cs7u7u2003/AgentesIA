@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ContentAgentApp</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">ContentAgentApp v3</p>
+          <h1>Planifica contenido útil, rápido y con estructura</h1>
+          <p class="hero-copy">
+            Genera ideas, define tono, construye un calendario semanal y guarda tu trabajo localmente.
+          </p>
+        </div>
+        <div class="hero-card">
+          <p class="hero-card-label">Estado</p>
+          <strong>Proyecto funcional mínimo</strong>
+          <span>Sin dependencias externas · listo para iterar</span>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="panel input-panel">
+          <div class="section-title">
+            <h2>Brief de contenido</h2>
+            <p>Completa el contexto y genera una propuesta inicial.</p>
+          </div>
+
+          <form id="brief-form" class="form-grid">
+            <label>
+              Proyecto
+              <input id="projectName" name="projectName" placeholder="Ej. ContentAgentApp" required />
+            </label>
+
+            <label>
+              Nicho
+              <input id="niche" name="niche" placeholder="Ej. IA para negocios" required />
+            </label>
+
+            <label>
+              Audiencia
+              <input id="audience" name="audience" placeholder="Ej. fundadores, marketers, pymes" required />
+            </label>
+
+            <label>
+              Objetivo principal
+              <select id="goal" name="goal">
+                <option value="educar">Educar</option>
+                <option value="vender">Vender</option>
+                <option value="captar leads">Captar leads</option>
+                <option value="comunidad">Construir comunidad</option>
+              </select>
+            </label>
+
+            <label>
+              Canal principal
+              <select id="channel" name="channel">
+                <option value="linkedin">LinkedIn</option>
+                <option value="instagram">Instagram</option>
+                <option value="blog">Blog</option>
+                <option value="x">X / Twitter</option>
+                <option value="youtube">YouTube</option>
+              </select>
+            </label>
+
+            <label>
+              Tono
+              <select id="tone" name="tone">
+                <option value="tecnico">Técnico y claro</option>
+                <option value="cercano">Cercano y práctico</option>
+                <option value="autoridad">Autoridad estratégica</option>
+                <option value="directo">Directo y vendedor</option>
+              </select>
+            </label>
+
+            <label class="full-width">
+              Oferta / producto
+              <input id="offer" name="offer" placeholder="Ej. consultoría, app, servicio, curso" />
+            </label>
+
+            <label class="full-width">
+              Ideas base (separadas por coma)
+              <textarea id="topics" name="topics" rows="4" placeholder="automatización, productividad, agentes, IA aplicada"></textarea>
+            </label>
+
+            <div class="actions full-width">
+              <button type="submit" class="primary">Generar plan</button>
+              <button type="button" id="saveBtn" class="secondary">Guardar</button>
+              <button type="button" id="resetBtn" class="ghost">Limpiar</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="panel output-panel">
+          <div class="section-title">
+            <h2>Salida generada</h2>
+            <p>Se actualiza automáticamente con base en tu brief.</p>
+          </div>
+
+          <div class="output-grid">
+            <article class="output-card">
+              <h3>Posicionamiento</h3>
+              <p id="positioningText">Completa el brief para generar una propuesta.</p>
+            </article>
+
+            <article class="output-card">
+              <h3>Ideas de contenido</h3>
+              <ul id="ideasList" class="bullet-list"></ul>
+            </article>
+
+            <article class="output-card">
+              <h3>Calendario semanal</h3>
+              <div id="calendarList" class="calendar-list"></div>
+            </article>
+
+            <article class="output-card">
+              <h3>CTA sugerido</h3>
+              <p id="ctaText">Aún sin generar.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <template id="calendarItemTemplate">
+      <div class="calendar-item">
+        <strong class="calendar-day"></strong>
+        <span class="calendar-topic"></span>
+        <small class="calendar-format"></small>
+      </div>
+    </template>
+
+    <script src="./contentLogic.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
